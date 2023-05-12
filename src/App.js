@@ -73,6 +73,7 @@ function App() {
               <h2>
                 {item.first_name} {item.last_name}
               </h2>
+              <p>Email: {item.email}</p>
               <p className="add" onClick={() => setTeam(team + 1)}>
                 Add to team <IoMdPersonAdd />
               </p>
