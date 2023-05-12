@@ -1,6 +1,9 @@
 import { useState } from "react";
 import "./App.css";
 import { Data } from "./data";
+import { IoMdPersonAdd } from "react-icons/io";
+import { RiTeamFill } from "react-icons/ri";
+
 function App() {
   const [state, setstate] = useState(Data);
   const [team, setTeam] = useState(0);
@@ -55,8 +58,11 @@ function App() {
       >
         Female
       </button>
+      <button onClick={() => setstate(Data)}>Clear Filters</button>
 
-      <h3>People in my team {team}</h3>
+      <h3>
+        People in my team <RiTeamFill /> {team}
+      </h3>
 
       <hr />
       {state.map((item) => {
@@ -68,7 +74,7 @@ function App() {
                 {item.first_name} {item.last_name}
               </h2>
               <p className="add" onClick={() => setTeam(team + 1)}>
-                Add to team
+                Add to team <IoMdPersonAdd />
               </p>
             </div>
           </div>
